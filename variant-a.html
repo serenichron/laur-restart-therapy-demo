@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Laur · Evaluarea posturii la birou — RESTART THERAPY (Demo)</title>
+<meta name="description" content="Demo intern. Laur vine la biroul companiei pentru evaluarea posturii și a ergonomiei spațiului de lucru, în București.">
+<style>
+  :root{
+    /* Token palette — Varianta A (editorial cald) */
+    --bg:        #FAF6EF;   /* crem călduț */
+    --surface:   #FFFFFF;
+    --ink:       #2B2118;   /* maro-săgeată, text principal */
+    --ink-soft:  #5A4A3A;   /* text secundar */
+    --accent:    #B5502E;   /* teracotă (CTAs, evidențieri) */
+    --accent-deep:#8F3D20;  /* hover CTA */
+    --accent-soft:#F3DED2;  /* fundal evidențieri calde */
+    --line:      #E5D9C9;   /* linii și borduri calde */
+    --ok:        #3B6B4E;   /* verde succes (AA pe alb) */
+    --ok-bg:     #E5F0E8;
+    --err:       #9C2B2B;   /* roșu eroare (AA pe alb) */
+    --err-bg:    #FCE7E7;
+    --focus:     #2B5BA8;   /* inel de focus (AA, vizibil) */
+    --font-serif:"Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+    --font-sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --space: clamp(64px, 9vw, 120px);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-serif);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-deep); text-underline-offset:3px; text-decoration-thickness:1px;}
+  a:hover{color:var(--accent);}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:3px solid var(--focus); outline-offset:2px; border-radius:4px;}
+
+  /* ===== Header ===== */
+  header.site{
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+    background:transparent;
+    position:sticky; top:0; z-index:10;
+    backdrop-filter:blur(6px);
+  }
+  .brand{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+  .brand .mark{font-family:var(--font-sans); font-weight:600; letter-spacing:.14em; text-transform:uppercase; font-size:.78rem; color:var(--accent-deep); border:1px solid var(--accent); border-radius:999px; padding:4px 12px;}
+  .brand .name{font-family:var(--font-sans); font-size:1.02rem; font-weight:600; color:var(--ink);}
+  .brand .tag{font-family:var(--font-sans); font-size:.82rem; color:var(--ink-soft);}
+
+  /* ===== Hero ===== */
+  .hero{padding:var(--space) 0 48px;}
+  .hero .eyebrow{font-family:var(--font-sans); font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-deep); margin-bottom:20px; display:flex; align-items:center; gap:10px;}
+  .hero .eyebrow::before{content:""; width:34px; height:2px; background:var(--accent);}
+  .hero h1{
+    font-size:clamp(2.2rem, 6.4vw, 4.3rem);
+    line-height:1.05;
+    font-weight:700;
+    max-width:16em;
+    letter-spacing:-.015em;
+  }
+  .hero h1 em{font-style:italic; color:var(--accent-deep);}
+  .hero .lede{
+    margin-top:26px; max-width:34em; font-size:clamp(1.05rem,1.8vw,1.28rem);
+    color:var(--ink-soft); line-height:1.65;
+  }
+  .hero .lede strong{color:var(--ink); font-weight:600;}
+  .hero-cta{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .btn{font-family:var(--font-sans); font-weight:600; font-size:.95rem; border:none; cursor:pointer; border-radius:var(--radius); padding:15px 26px; text-decoration:none; display:inline-block;}
+  .btn.primary{background:var(--accent); color:#fff;}
+  .btn.primary:hover{background:var(--accent-deep);}
+  .btn.ghost{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--line);}
+  .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--accent); color:var(--accent-deep);}
+  .hero-note{font-family:var(--font-sans); font-size:.82rem; color:var(--ink-soft);}
+
+  /* compoziție abstractă caldă (nu portret) */
+  .hero-visual{margin-top:40px; max-width:760px;}
+  .abstract{width:100%; height:auto; display:block; border-radius:var(--radius);}
+
+  /* ===== Section shared ===== */
+  section{padding:var(--space) 0;}
+  .kicker{font-family:var(--font-sans); font-size:.8rem; letter-spacing:.13em; text-transform:uppercase; color:var(--accent-deep); margin-bottom:14px;}
+  h2{font-size:clamp(1.7rem, 3.6vw, 2.6rem); line-height:1.12; font-weight:700; letter-spacing:-.01em; max-width:20em;}
+  .sec-lede{margin-top:16px; color:var(--ink-soft); max-width:36em; font-size:1.08rem;}
+
+  /* ===== Services ===== */
+  .services .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; margin-top:38px;}
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:30px 26px;
+  }
+  .card .num{font-family:var(--font-sans); font-size:.8rem; color:var(--accent-deep); letter-spacing:.12em;}
+  .card h3{font-size:1.35rem; margin:10px 0 8px; line-height:1.2;}
+  .card p{color:var(--ink-soft); font-size:1rem;}
+
+  /* ===== About ===== */
+  .about{background:var(--surface); border-block:1px solid var(--line);}
+  .about .row{display:grid; grid-template-columns:1.5fr 1fr; gap:40px; align-items:start;}
+  .namecard{background:var(--accent-soft); border-radius:var(--radius); padding:26px; border-left:6px solid var(--accent);}
+  .namecard .role{font-family:var(--font-sans); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-deep);}
+  .namecard .who{font-size:1.5rem; font-weight:700; line-height:1.2; margin-top:8px;}
+  .namecard .org{font-family:var(--font-sans); color:var(--ink-soft); margin-top:4px;}
+
+  /* ===== CTA / form ===== */
+  .cta{background:var(--ink); color:#F7EFE5;}
+  .cta h2{color:#FFF7ED;}
+  .cta .kicker{color:#E8A57E;}
+  .cta .sec-lede{color:#D8CDBD;}
+  .form-shell{max-width:640px; margin-top:10px;}
+  form.demo-form{
+    background:var(--surface); color:var(--ink); border-radius:var(--radius);
+    padding:30px; margin-top:30px; box-shadow:0 10px 30px rgba(0,0,0,.12);
+  }
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-family:var(--font-sans); font-weight:600; font-size:.9rem; margin-bottom:6px;}
+  .field label .req{color:var(--err);}
+  .hint{font-family:var(--font-sans); font-size:.8rem; color:var(--ink-soft); margin-top:4px;}
+  input[type=text], input[type=email], input[type=tel], select{
+    width:100%; font-family:var(--font-sans); font-size:1rem; color:var(--ink);
+    padding:13px 14px; border:1.5px solid var(--line); border-radius:10px; background:#fff;
+  }
+  input:focus, select:focus{border-color:var(--focus); outline:none; box-shadow:0 0 0 3px rgba(43,91,168,.18);}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media(max-width:560px){.field-row{grid-template-columns:1fr;}}
+  button.submit{width:100%; margin-top:8px; font-size:1.05rem; padding:17px;}
+  .form-note{font-family:var(--font-sans); font-size:.78rem; color:var(--ink-soft); margin-top:12px; text-align:center;}
+  .status{border-radius:10px; padding:14px 16px; font-family:var(--font-sans); font-size:.95rem; margin-top:18px; display:none;}
+  .status.success{display:block; background:var(--ok-bg); color:var(--ok); border:1px solid var(--ok);}
+  .status.error{display:block; background:var(--err-bg); color:var(--err); border:1px solid var(--err);}
+  .status .title{font-weight:700;}
+  .field .error-msg{color:var(--err); font-family:var(--font-sans); font-size:.82rem; margin-top:4px; display:none;}
+  .field.invalid .error-msg{display:block;}
+  .field.invalid input, .field.invalid select{border-color:var(--err);}
+
+  /* ===== Footer ===== */
+  footer.site{background:var(--bg); border-top:1px solid var(--line);}
+  .footer-top{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-top:36px;}
+  .footer-note{font-family:var(--font-sans); font-size:.82rem; color:var(--ink-soft); background:var(--accent-soft); border-radius:8px; padding:12px 16px; max-width:60ch; line-height:1.5;}
+  .footer-meta{padding:24px 0 40px; font-family:var(--font-sans); font-size:.78rem; color:var(--ink-soft); display:flex; gap:18px; flex-wrap:wrap;}
+
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none!important;}}
+  @media(max-width:700px){.about .row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div role="note" style="background:#2B2118;color:#F0E3D3;text-align:center;font:600 12px/1.5 Helvetica,Arial,sans-serif;padding:7px 14px;">Propuneri de design pentru review — concept demonstrativ, fără colectare de date.</div>
+<header class="site">
+  <div class="wrap brand">
+    <span class="mark">RESTART THERAPY</span>
+    <span class="name">Evaluarea posturii la birou</span>
+    <span class="tag">· București</span>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Evaluare la sediu · Demonstrație internă</p>
+      <h1>Postura la birou, evaluată <em>la sediul echipei tale.</em></h1>
+      <p class="lede"><strong>În București</strong>, Laur vine la biroul companiei pentru evaluarea posturii și a ergonomiei spațiului de lucru: scaun, poziție și amplasarea echipamentelor.</p>
+      <div class="hero-cta">
+        <a href="#formular" class="btn primary">Solicită o evaluare pentru echipa ta</a>
+        <span class="hero-note">Demo — formularul nu transmite date reale.</span>
+      </div>
+
+      <!-- Compoziție abstractă caldă: linii de contur, stilizate (NU portret, NU foto de stoc) -->
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="abstract" viewBox="0 0 760 300" role="presentation" focusable="false">
+          <rect width="760" height="300" fill="#F0E3D3"/>
+          <circle cx="150" cy="150" r="88" fill="none" stroke="#B5502E" stroke-width="2"/>
+          <circle cx="150" cy="150" r="58" fill="none" stroke="#8F3D20" stroke-width="1.5"/>
+          <circle cx="150" cy="150" r="30" fill="#B5502E" opacity=".85"/>
+          <path d="M270 100 Q390 40 520 120 T760 170" fill="none" stroke="#8F3D20" stroke-width="2" opacity=".7"/>
+          <path d="M270 215 Q420 250 540 210 T760 235" fill="none" stroke="#B5502E" stroke-width="1.5" opacity=".6"/>
+          <circle cx="620" cy="90" r="40" fill="none" stroke="#B5502E" stroke-width="2" opacity=".8"/>
+          <circle cx="620" cy="90" r="22" fill="#3B6B4E" opacity=".18"/>
+          <text x="130" y="262" fill="#8F3D20" font-family="Georgia,serif" font-size="13" letter-spacing="1">postură · scaun · echipamente</text>
+          <text x="548" y="262" fill="#8F3D20" font-family="Georgia,serif" font-size="13" letter-spacing="1">la biroul echipei</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="servicii" aria-labelledby="serv-h">
+    <div class="wrap">
+      <p class="kicker">Ce acoperă vizita</p>
+      <h2 id="serv-h">Trei paliere de evaluare, într-o singură vizită</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Postură</h3>
+          <p>Observarea poziției la birou, a modului de ședere și a obiceiurilor de lucru zilnice ale echipei.</p>
+        </article>
+        <article class="card">
+          <div class="num">02</div>
+          <h3>Scaun și poziție</h3>
+          <p>Evaluarea ergonomiei scaunului și a poziției față de masa de lucru și afișaj.</p>
+        </article>
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Echipamente</h3>
+          <p>Evaluarea amplasării echipamentelor de lucru — monitor, tastatură, periferice — în raport cu omul.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="despre" aria-labelledby="about-h">
+    <div class="wrap row">
+      <div>
+        <p class="kicker">Despre</p>
+        <h2 id="about-h">Specialist în evaluarea ergonomică, față în față cu echipa ta</h2>
+        <p class="sec-lede">Laur vine personal la sediul companiei, pentru o evaluare practică a spațiului de lucru — nu o prezentare, ci o consultare aplicată la biroul fiecărei persoane.</p>
+      </div>
+      <div class="namecard">
+        <p class="role">Fizioterapeut &amp; evaluator</p>
+        <p class="who">Panait Laurențiu Cristian (Laur)</p>
+        <p class="org">RESTART THERAPY SRL</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM / CTA -->
+  <section class="cta" id="formular" aria-labelledby="cta-h">
+    <div class="wrap">
+      <p class="kicker">Solicită o evaluare</p>
+      <h2 id="cta-h">Solicită o evaluare pentru echipa ta</h2>
+      <div class="sec-lede">Completează datele de contact. Un coordonator revine pentru confirmare. Formularul de mai jos este o demonstrație — nu trimite date reale către Laur.</div>
+
+      <div class="form-shell">
+        <form class="demo-form" novalidate data-demo-form>
+          <div class="field">
+            <label for="a-nume">Nume <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="a-nume" name="nume" required aria-required="true" autocomplete="name">
+            <div class="error-msg" role="alert">Completează numele.</div>
+          </div>
+          <div class="field">
+            <label for="a-companie">Companie <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="a-companie" name="companie" required aria-required="true" autocomplete="organization">
+            <div class="error-msg" role="alert">Completează compania.</div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="a-email">Email sau telefon <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="a-email" name="email" autocomplete="email" data-or="email">
+              <div class="hint">Cel puțin unul dintre email sau telefon este necesar.</div>
+              <div class="error-msg" role="alert">Introdu un email sau un telefon valid.</div>
+            </div>
+            <div class="field">
+              <label for="a-tel">Telefon</label>
+              <input type="tel" id="a-tel" name="telefon" autocomplete="tel" data-or="tel">
+              <div class="error-msg" role="alert">Introdu un telefon valid.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="a-echipa">Dimensiunea echipei</label>
+            <select id="a-echipa" name="dimensiune_echipa">
+              <option value="">Selectează (opțional)</option>
+              <option>1–10 persoane</option>
+              <option>11–30 persoane</option>
+              <option>31–100 persoane</option>
+              <option>Peste 100 de persoane</option>
+            </select>
+          </div>
+          <button type="submit" class="btn primary submit">Trimite solicitarea de test</button>
+          <p class="form-note">Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.</p>
+
+          <div class="status success" role="status" data-status-success>
+            <span class="title">Solicitarea de test a fost salvată. Nu a fost transmisă către Laur.</span>
+          </div>
+          <div class="status error" role="alert" data-status-error>
+            <span class="title">Solicitarea nu a putut fi salvată. Încearcă din nou.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="brand-name" style="font-family:var(--font-sans);font-weight:600;">RESTART THERAPY · Evaluarea posturii</p>
+        <p style="color:var(--ink-soft);font-family:var(--font-sans);font-size:.9rem;margin-top:6px;">RESTART THERAPY SRL — demonstrație de design pentru echipă.</p>
+      </div>
+      <div class="footer-note">
+        Flux planificat pentru lansare: Emblem Studio integrat pe site → WordPress + FunnelKit. Demo-ul folosește exclusiv date de test.
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>Demo intern · nu publicat</span>
+      <span>Design: Varianta A — Editorial cald</span>
+    </div>
+  </div>
+</footer>
+<script>
+  /* Concept demonstrativ: formularul este dezactivat.
+     Nu trimite si nu stocheaza nimic pe GitHub Pages. */
+  (function () {
+    var form = document.querySelector('[data-demo-form]');
+    if (!form) return;
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Formular dezactivat (demo)'; }
+    var note = form.querySelector('.form-note');
+    if (note) { note.textContent = 'Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.'; }
+  })();
+</script>
+</body>
+</html>

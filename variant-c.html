@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Laur · Postura la birou — RESTART THERAPY (Demo)</title>
+<meta name="description" content="Demo intern. Evaluarea posturii și a ergonomiei spațiului de lucru la sediul companiei, în București.">
+<style>
+  :root{
+    /* Token palette — Varianta C (dinamic / expresiv) */
+    --bg:        #0E1116;   /* negru-bleumarin profund */
+    --bg-soft:   #161B22;   /* suprafețe întunecate */
+    --surface:   #FFFFFF;
+    --ink:       #FFFFFF;   /* text principal pe fundal închis */
+    --ink-soft:  #AEB7C2;   /* text secundar */
+    --accent:    #C6F24E;   /* lime energetic (CTAs) */
+    --accent-ink:#13201A;   /* text pe lime */
+    --accent-2:  #4FD1F2;   /* cyan (detalii, diagrame) */
+    --accent-3:  #FF7A59;   /* coral (accente) */
+    --line:      #2A323C;   /* linii pe fundal închis */
+    --ok:        #7EE0A3;   /* verde succes (pe întunecat) */
+    --ok-bg:     #12301F;
+    --err:       #FF9B8A;   /* roșu eroare (pe întunecat) */
+    --err-bg:    #3A1512;
+    --focus:     #F2B84E;   /* inel de focus (vizibil pe întunecat) */
+    --font: "Arial Black", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    --font-body: "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, sans-serif;
+    --space: clamp(70px, 10vw, 130px);
+    --radius: 18px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body); color:var(--ink); background:var(--bg); line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 26px;}
+  :focus-visible{outline:3px solid var(--focus); outline-offset:2px; border-radius:5px;}
+  .accent-txt{color:var(--accent);}
+
+  /* ===== Header ===== */
+  header.site{position:sticky; top:0; z-index:20; background:rgba(14,17,22,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0; flex-wrap:wrap; gap:12px;}
+  .brand{display:flex; align-items:center; gap:14px; font-family:var(--font);}
+  .brand .mark{background:var(--accent); color:var(--accent-ink); padding:6px 12px; border-radius:8px; font-weight:900; letter-spacing:.02em;}
+  .brand .name{font-weight:900; letter-spacing:.02em;}
+  .nav-cta{background:var(--accent); color:var(--accent-ink)!important; font-weight:800; padding:11px 20px; border-radius:10px; text-decoration:none; font-size:.92rem;}
+  .nav-cta:hover{filter:brightness(1.08);}
+
+  /* ===== Hero ===== */
+  .hero{padding:var(--space) 0 30px; position:relative; overflow:hidden;}
+  .hero::before{content:""; position:absolute; width:560px;height:560px;border-radius:50%; background:radial-gradient(circle, rgba(79,209,242,.16), transparent 65%); top:-140px; right:-120px; pointer-events:none;}
+  .hero::after{content:""; position:absolute; width:420px;height:420px;border-radius:50%; background:radial-gradient(circle, rgba(198,242,78,.10), transparent 65%); bottom:-160px; left:-140px; pointer-events:none;}
+  .badge{display:inline-flex; align-items:center; gap:8px; background:var(--bg-soft); border:1px solid var(--line); padding:6px 14px; border-radius:999px; font-size:.8rem; letter-spacing:.05em; color:var(--ink-soft); margin-bottom:26px;}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
+  .hero h1{font-family:var(--font); font-weight:900; line-height:.98; font-size:clamp(2.6rem, 9vw, 6rem); letter-spacing:-.03em; max-width:14em;}
+  .hero h1 .stroke{color:transparent; -webkit-text-stroke:2px var(--ink);}
+  .hero h1 .up{color:var(--accent-3);}
+  .leade{margin-top:26px; font-size:clamp(1.05rem, 2vw, 1.3rem); color:var(--ink-soft); max-width:32em;}
+  .leade strong{color:var(--ink);}
+  .cta-row{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .btn{font-family:var(--font); font-weight:800; font-size:1rem; border:none; cursor:pointer; border-radius:12px; padding:16px 30px; text-decoration:none; display:inline-block; letter-spacing:.01em;}
+  .btn.primary{background:var(--accent); color:var(--accent-ink);}
+  .btn.primary:hover{filter:brightness(1.08);}
+  .btn.ghost{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 2px var(--line);}
+  .btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--accent); color:var(--accent);}
+  .marquee{margin-top:48px; border-block:1px solid var(--line); padding:18px 0; overflow:hidden;}
+  .marquee-inner{display:flex; gap:42px; white-space:nowrap; font-family:var(--font); font-weight:900; font-size:1.15rem; letter-spacing:.02em; color:var(--ink-soft); animation:scroll 22s linear infinite; width:max-content;}
+  .marquee-inner span{display:inline-flex; align-items:center; gap:42px;}
+  .marquee-inner .hl{color:var(--accent);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .marquee span{display:inline-flex; align-items:center; gap:42px;}
+  @media(prefers-reduced-motion:reduce){.marquee-inner{animation:none; flex-wrap:wrap;}}
+
+  /* ===== Ticker / values ===== */
+  .values{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px;}
+  .value{background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+  .value .big{font-family:var(--font); font-weight:900; font-size:1.5rem; color:var(--accent);}
+  .value .lbl{font-size:.9rem; color:var(--ink-soft); margin-top:6px;}
+  @media(max-width:700px){.values{grid-template-columns:1fr;}}
+
+  /* ===== Sections ===== */
+  section{padding:var(--space) 0;}
+  .wrap > .kicker{font-family:var(--font); font-size:.85rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); font-weight:800; margin-bottom:16px;}
+  h2{font-family:var(--font); font-weight:900; letter-spacing:-.02em; font-size:clamp(2rem, 5vw, 3.4rem); line-height:1.02; max-width:20em;}
+  .sec-lede{margin-top:18px; color:var(--ink-soft); max-width:34em; font-size:1.1rem;}
+
+  section.alt{background:var(--bg-soft); border-block:1px solid var(--line);}
+
+  /* ===== Services (numbered, dynamic) ===== */
+  .services{margin-top:34px; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;}
+  .card{background:var(--bg); border:1px solid var(--line); border-radius:var(--radius); padding:28px; position:relative; transition:transform .18s ease, border-color .18s ease;}
+  .card:hover{transform:translateY(-4px); border-color:var(--accent);}
+  .card .k{font-family:var(--font); font-weight:900; font-size:2.4rem; color:transparent; -webkit-text-stroke:1.5px var(--line);}
+  .card h3{font-family:var(--font); font-weight:900; font-size:1.35rem; margin:12px 0 8px;}
+  .card p{color:var(--ink-soft); font-size:1rem;}
+  .card .tag{position:absolute; top:22px; right:22px; font-family:var(--font); font-size:.72rem; color:var(--accent);}
+
+  /* ===== Process: horizontal, expressive numbers ===== */
+  .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px; margin-top:42px; counter-reset:st;}
+  .step{border-left:2px solid var(--line); padding:0 0 0 24px;}
+  .step::before{counter-increment:st; content:"0" counter(st); font-family:var(--font); font-weight:900; font-size:2rem; color:var(--accent-2); display:block;}
+  .step h3{font-family:var(--font); font-weight:800; margin:10px 0 6px; font-size:1.15rem;}
+  .step p{color:var(--ink-soft); font-size:.95rem;}
+
+  /* ===== About ===== */
+  .about .row{display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:start;}
+  .cred{border-radius:var(--radius); padding:26px; background:var(--bg); border:1px solid var(--line); border-top:6px solid var(--accent-2);}
+  .cred .role{font-family:var(--font); font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2); font-weight:800;}
+  .cred .who{font-family:var(--font); font-weight:900; font-size:1.5rem; margin-top:10px; line-height:1.15;}
+  .cred .org{color:var(--ink-soft); margin-top:6px;}
+  @media(max-width:700px){.about .row{grid-template-columns:1fr;}}
+
+  /* ===== Form (light surface for contrast) ===== */
+  .cta .form-wrap{display:grid; grid-template-columns:1fr 1.1fr; gap:44px; align-items:start; margin-top:36px;}
+  .cta .left .big-l{font-family:var(--font); font-weight:900; font-size:clamp(1.6rem,3.4vw,2.4rem); line-height:1.04; max-width:16em;}
+  .cta .left p{color:var(--ink-soft); margin-top:18px; max-width:30em;}
+  .form-card{background:var(--surface); color:#0E1116; border-radius:var(--radius); padding:32px; box-shadow:0 24px 60px rgba(0,0,0,.45);}
+  .form-card h3{font-family:var(--font); font-weight:900; color:#0E1116; font-size:1.35rem;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-weight:700; font-size:.9rem; margin-bottom:6px; color:#0E1116;}
+  .field label .req{color:var(--err);}
+  .hint{font-size:.8rem; color:#46505A; margin-top:4px;}
+  input[type=text],input[type=email],input[type=tel],select{width:100%; font-family:var(--font-body); font-size:1rem; color:#0E1116; padding:13px 14px; border:1.5px solid #D5DBE1; border-radius:10px; background:#fff;}
+  input:focus,select:focus{border-color:var(--accent-2); outline:none; box-shadow:0 0 0 3px rgba(79,209,242,.35);}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media(max-width:640px){.field-row{grid-template-columns:1fr;}}
+  button.submit{width:100%; margin-top:8px; font-size:1.05rem; padding:17px; background:var(--accent); color:var(--accent-ink);}
+  button.submit:hover{filter:brightness(1.08);}
+  .form-note{font-size:.8rem; color:#46505A; margin-top:12px; text-align:center;}
+  .status{border-radius:11px; padding:14px 16px; font-size:.95rem; margin-top:18px; display:none; font-weight:700;}
+  .status.success{display:block; background:#E3F3E8; color:#1E6B4A; border:1px solid #1E6B4A;}
+  .status.error{display:block; background:#FCE3E1; color:#B3261E; border:1px solid #B3261E;}
+  .field .error-msg{color:var(--err); font-size:.84rem; margin-top:4px; display:none; font-weight:600; color:#B3261E;}
+  .field.invalid .error-msg{display:block;}
+  .field.invalid input,.field.invalid select{border-color:#B3261E; background:#FFF7F7;}
+
+  footer.site{background:var(--bg-soft); border-top:1px solid var(--line);}
+  .footer-top{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-top:38px;}
+  .footer-note{font-size:.86rem; color:var(--ink-soft); background:var(--bg); border-left:4px solid var(--accent); border-radius:8px; padding:14px 18px; max-width:62ch; line-height:1.55;}
+  .footer-meta{padding:22px 0 44px; font-size:.8rem; color:#7A8590; display:flex; gap:18px; flex-wrap:wrap;}
+
+  @media(max-width:900px){.cta .form-wrap{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div role="note" style="background:#2B2118;color:#F0E3D3;text-align:center;font:600 12px/1.5 Helvetica,Arial,sans-serif;padding:7px 14px;">Propuneri de design pentru review — concept demonstrativ, fără colectare de date.</div>
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="mark">RT</span>
+      <span class="name">RESTART&nbsp;THERAPY</span>
+    </div>
+    <a href="#formular" class="nav-cta">Solicită o evaluare</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge"><span class="dot"></span>Evaluare ergonomică la sediu · Demo intern</span>
+      <h1>Postura la birou,<br><span class="stroke">evaluată la sediul</span><br><span class="up">echipei tale.</span></h1>
+      <p class="leade"><strong>În București</strong>, Laur vine la biroul companiei pentru evaluarea posturii și a ergonomiei spațiului de lucru: scaun, poziție și amplasarea echipamentelor.</p>
+      <div class="cta-row">
+        <a href="#formular" class="btn primary">Solicită o evaluare pentru echipa ta →</a>
+        <a href="#servicii" class="btn ghost">Ce acoperă vizita</a>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-inner">
+          <span>POSTURĂ <span class="hl">·</span> SCAUN ȘI POZIȚIE <span class="hl">·</span> ECHIPAMENTE <span class="hl">·</span> LA SEDIUL ECHIPEI <span class="hl">·</span> BUCUREȘTI <span class="hl">·</span>&nbsp;</span>
+          <span>POSTURĂ <span class="hl">·</span> SCAUN ȘI POZIȚIE <span class="hl">·</span> ECHIPAMENTE <span class="hl">·</span> LA SEDIUL ECHIPEI <span class="hl">·</span> BUCUREȘTI <span class="hl">·</span>&nbsp;</span>
+        </div>
+      </div>
+
+      <div class="values">
+        <div class="value"><div class="big">La sediu</div><div class="lbl">Vizită la biroul companiei, nu o consultație la distanță</div></div>
+        <div class="value"><div class="big">3 paliere</div><div class="lbl">Postură · Scaun și poziție · Echipamente</div></div>
+        <div class="value"><div class="big">București</div><div class="lbl">Zona de desfășurare a vizitei</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="alt" id="servicii" aria-labelledby="serv-h">
+    <div class="wrap">
+      <p class="kicker">Ce acoperă vizita</p>
+      <h2 id="serv-h">Trei paliere de evaluare</h2>
+      <div class="services">
+        <article class="card">
+          <span class="tag">01</span>
+          <div class="k">Postură</div>
+          <h3>Observarea poziției</h3>
+          <p>Observarea poziției la birou, a modului de ședere și a obiceiurilor de lucru zilnice ale echipei.</p>
+        </article>
+        <article class="card">
+          <span class="tag">02</span>
+          <div class="k">Scaun</div>
+          <h3>Scaun și poziție</h3>
+          <p>Evaluarea ergonomiei scaunului și a poziției față de masa de lucru și afișaj.</p>
+        </article>
+        <article class="card">
+          <span class="tag">03</span>
+          <div class="k">Echip.</div>
+          <h3>Echipamente</h3>
+          <p>Evaluarea amplasării echipamentelor de lucru — monitor, tastatură, periferice — în raport cu omul.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="proces" aria-labelledby="proc-h">
+    <div class="wrap">
+      <p class="kicker">Cum decurge</p>
+      <h2 id="proc-h">De la solicitare, la vizită</h2>
+      <div class="steps">
+        <div class="step"><h3>Solicitare</h3><p>Compania trimite o solicitare de evaluare pentru echipă.</p></div>
+        <div class="step"><h3>Vizită la sediu</h3><p>Laur vine la birou și evaluează spațiul de lucru.</p></div>
+        <div class="step"><h3>Consultanță</h3><p>Recomandări practice pentru postură și ergonomie.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="alt about" id="despre" aria-labelledby="about-h">
+    <div class="wrap row">
+      <div>
+        <p class="kicker">Despre</p>
+        <h2 id="about-h">Un specialist care vine la tine</h2>
+        <p class="sec-lede">Laur participă personal la vizită. Evaluarea se face la birou, acolo unde se lucrează — pentru ca recomandările să se aplice direct la locul de muncă.</p>
+      </div>
+      <div class="cred">
+        <p class="role">Fizioterapeut &amp; evaluator</p>
+        <p class="who">Panait Laurențiu Cristian (Laur)</p>
+        <p class="org">RESTART THERAPY SRL</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="cta" id="formular" aria-labelledby="cta-h">
+    <div class="wrap">
+      <p class="kicker">Solicită o evaluare</p>
+      <div class="form-wrap">
+        <div class="left">
+          <div class="big-l">Solicită o evaluare <span class="accent-txt">pentru echipa ta</span></div>
+          <p>Completează datele de contact. Acest formular este o demonstrație — nimic nu este transmis către Laur sau către un sistem real.</p>
+        </div>
+        <form class="form-card" novalidate data-demo-form>
+          <h3>Date de contact</h3>
+          <div style="height:4px"></div>
+          <div class="field">
+            <label for="c-nume">Nume <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="c-nume" name="nume" required aria-required="true" autocomplete="name">
+            <div class="error-msg" role="alert">Completează numele.</div>
+          </div>
+          <div class="field">
+            <label for="c-companie">Companie <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="c-companie" name="companie" required aria-required="true" autocomplete="organization">
+            <div class="error-msg" role="alert">Completează compania.</div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="c-email">Email sau telefon <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="c-email" name="email" autocomplete="email">
+              <div class="hint">Cel puțin unul dintre email sau telefon este necesar.</div>
+              <div class="error-msg" role="alert">Introdu un email sau un telefon valid.</div>
+            </div>
+            <div class="field">
+              <label for="c-tel">Telefon</label>
+              <input type="tel" id="c-tel" name="telefon" autocomplete="tel">
+              <div class="error-msg" role="alert">Introdu un telefon valid.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-echipa">Dimensiunea echipei</label>
+            <select id="c-echipa" name="dimensiune_echipa">
+              <option value="">Selectează (opțional)</option>
+              <option>1–10 persoane</option>
+              <option>11–30 persoane</option>
+              <option>31–100 persoane</option>
+              <option>Peste 100 de persoane</option>
+            </select>
+          </div>
+          <button type="submit" class="btn primary submit">Trimite solicitarea de test</button>
+          <p class="form-note">Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.</p>
+
+          <div class="status success" role="status" data-status-success>
+            Solicitarea de test a fost salvată. Nu a fost transmisă către Laur.
+          </div>
+          <div class="status error" role="alert" data-status-error>
+            Solicitarea nu a putut fi salvată. Încearcă din nou.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="brand" style="font-family:var(--font);font-weight:900;">RESTART&amp;nbsp;THERAPY</p>
+        <p style="color:var(--ink-soft);font-size:.9rem;margin-top:8px;">RESTART THERAPY SRL — demonstrație de design pentru echipă.</p>
+      </div>
+      <div class="footer-note">
+        Flux planificat pentru lansare: Emblem Studio integrat pe site → WordPress + FunnelKit. Demo-ul folosește exclusiv date de test.
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>Demo intern · nu publicat</span>
+      <span>Design: Varianta C — Dinamic cu tipografie expresivă</span>
+    </div>
+  </div>
+</footer>
+<script>
+  /* Concept demonstrativ: formularul este dezactivat.
+     Nu trimite si nu stocheaza nimic pe GitHub Pages. */
+  (function () {
+    var form = document.querySelector('[data-demo-form]');
+    if (!form) return;
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Formular dezactivat (demo)'; }
+    var note = form.querySelector('.form-note');
+    if (note) { note.textContent = 'Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.'; }
+  })();
+</script>
+</body>
+</html>
