@@ -83,6 +83,12 @@
   .hero-visual{margin-top:40px; max-width:760px;}
   .abstract{width:100%; height:auto; display:block; border-radius:var(--radius);}
 
+  /* ===== Photo strip (stock) ===== */
+  .photo{padding:0 0 var(--space);}
+  .photo-fig{margin:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface);}
+  .photo-img{width:100%; height:auto; display:block; object-fit:cover;}
+  .photo-cap{font-family:var(--font-sans); font-size:.78rem; color:var(--ink-soft); padding:12px 16px; border-top:1px solid var(--line); background:var(--surface);}
+
   /* ===== Section shared ===== */
   section{padding:var(--space) 0;}
   .kicker{font-family:var(--font-sans); font-size:.8rem; letter-spacing:.13em; text-transform:uppercase; color:var(--accent-deep); margin-bottom:14px;}
@@ -185,6 +191,16 @@
           <text x="548" y="262" fill="#8F3D20" font-family="Georgia,serif" font-size="13" letter-spacing="1">la biroul echipei</text>
         </svg>
       </div>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP (stock) -->
+  <section class="photo">
+    <div class="wrap">
+      <figure class="photo-fig">
+        <img class="photo-img" src="img/hero-a.jpg" alt="Birou modern cu scaun ergonomic si masa de lucru, demonstrativ" loading="lazy" width="760" height="507">
+        <figcaption class="photo-cap">Imagine ilustrativa (stock). Mediul de lucru evaluat: scaun, pozitie si amplasarea echipamentelor.</figcaption>
+      </figure>
     </div>
   </section>
 

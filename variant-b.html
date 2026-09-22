@@ -80,6 +80,12 @@
   .stat .d{font-size:.86rem; color:var(--ink-soft); margin-top:4px;}
   @media(max-width:700px){.stats{grid-template-columns:1fr;}}
 
+  /* ===== Photo strip (stock) ===== */
+  .photo{padding:0 0 var(--space);}
+  .photo-fig{margin:0; border:1px solid var(--grid-line); border-radius:14px; overflow:hidden; background:var(--surface);}
+  .photo-img{width:100%; height:auto; display:block; object-fit:cover;}
+  .photo-cap{font-size:.78rem; color:var(--ink-soft); padding:12px 16px; border-top:1px solid var(--grid-line);}
+
   /* ===== Sections ===== */
   section{padding:var(--space) 0;}
   .kicker{font-size:.8rem; letter-spacing:.11em; text-transform:uppercase; color:var(--brand-deep); font-weight:700; margin-bottom:14px;}
@@ -227,6 +233,16 @@
         <div class="stat"><div class="k">3 paliere</div><div class="d">Postură, scaun &amp; poziție, echipamente</div></div>
         <div class="stat"><div class="k">București</div><div class="d">Zona de desfășurare pentru vizită</div></div>
       </div>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP (stock) -->
+  <section class="photo">
+    <div class="wrap">
+      <figure class="photo-fig">
+        <img class="photo-img" src="img/hero-b.jpg" alt="Sala de birou moderna cu scaune ergonomice, demonstrativ" loading="lazy" width="800" height="534">
+        <figcaption class="photo-cap">Imagine ilustrativa (stock). Mediul de lucru evaluat: scaun, pozitie si amplasarea echipamentelor.</figcaption>
+      </figure>
     </div>
   </section>
 

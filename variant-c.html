@@ -77,6 +77,12 @@
   .value .lbl{font-size:.9rem; color:var(--ink-soft); margin-top:6px;}
   @media(max-width:700px){.values{grid-template-columns:1fr;}}
 
+  /* ===== Photo strip (stock) ===== */
+  .photo{padding:0 0 var(--space);}
+  .photo-fig{margin:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--bg-soft);}
+  .photo-img{width:100%; height:auto; display:block; object-fit:cover;}
+  .photo-cap{font-size:.8rem; color:var(--ink-soft); padding:12px 16px; border-top:1px solid var(--line);}
+
   /* ===== Sections ===== */
   section{padding:var(--space) 0;}
   .wrap > .kicker{font-family:var(--font); font-size:.85rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); font-weight:800; margin-bottom:16px;}
@@ -177,6 +183,16 @@
         <div class="value"><div class="big">3 paliere</div><div class="lbl">Postură · Scaun și poziție · Echipamente</div></div>
         <div class="value"><div class="big">București</div><div class="lbl">Zona de desfășurare a vizitei</div></div>
       </div>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP (stock) -->
+  <section class="photo">
+    <div class="wrap">
+      <figure class="photo-fig">
+        <img class="photo-img" src="img/hero-c.jpg" alt="Birou de lucru modern in ambient întunecat, demonstrativ" loading="lazy" width="1400" height="900">
+        <figcaption class="photo-cap">Imagine ilustrativa (stock). Mediul de lucru evaluat: scaun, pozitie si amplasarea echipamentelor.</figcaption>
+      </figure>
     </div>
   </section>
 
