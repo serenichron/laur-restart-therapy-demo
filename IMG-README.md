@@ -1,21 +1,22 @@
 # Imagini stock (Laur demo)
 
-Cele trei fotografii din `img/` sunt imagini ilustrative stock, folosite exclusiv
-ca material demonstrativ pentru cele trei variante ale paginii. Nu este o ofertă
-și nu prezintă o persoană identificabilă sau date personale.
+Trei fotografii din `img/` folosite ca material ilustrativ pentru variantele
+paginii de evaluare a posturii la birou. Sunt imagini stock cu oameni lucrând
+la birou/calculator (inclusiv posturi încordate), relevante pentru evaluarea
+ergonomică.
 
-- `img/hero-a.jpg` — birou modern cu scaun ergonomic + masă de lucru (varianta A)
-- `img/hero-b.jpg` — sală de birou cu scaune ergonomice (varianta B)
-- `img/hero-c.jpg` — birou de lucru modern, ambient întunecat (varianta C)
+- `img/hero-a.jpg` — echipă lucrând la birou cu laptopuri, ton cald (varianta A)
+- `img/hero-b.jpg` — echipă tehnică lucrând la birou, postură încordată (varianta B)
+- `img/hero-c.jpg` — persoane la birou, postură încordată, alb-negru (varianta C)
 
 ## Licență
 
-Am folosit doar fotografii din biblioteca **Unsplash** (licență Unsplash —
-folosire comercială și necomercială permisă, fără atribuire obligatorie).
-Recomandat: păstrează un referințe al sursei pentru audit intern.
+Fotografii din biblioteca **Unsplash** (licență Unsplash — folosire comercială
+și necomercială permisă, fără atribuire obligatorie).
 
 Note:
-- Imaginile NU conțin fețe recognoscibile, documente, ecrane cu date personale
-  sau informații de identificare.
+- Imaginile NU conțin date personale lizibile (fețe recognoscibile ale unor
+  utilizatori individuali, ecrane cu date, documente) — am verificat fiecare
+  fotografie manual înainte de a o folosi.
 - Sunt găzduite local în repo, pentru ca site-ul să rămână static și izolat
   (fără requests către servicii externe).

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>Laur · Evaluarea ergonomiei la birou — RESTART THERAPY (Demo)</title>
-<meta name="description" content="Demo intern. Evaluarea posturii și a ergonomiei spațiului de lucru la sediul companiei, în București.">
+<title>Laur · Evaluarea ergonomiei la birou — RESTART THERAPY</title>
+<meta name="description" content="Evaluarea posturii și a ergonomiei spațiului de lucru la sediul companiei, în București.">
 <style>
   :root{
     /* Token palette — Varianta B (tehnic / ergonomic) */
@@ -66,11 +66,10 @@
   .btn.primary:hover{background:var(--brand-deep);}
   .btn.ghost{background:transparent; color:var(--brand-deep); box-shadow:inset 0 0 0 1.5px var(--brand);}
   .btn.ghost:hover{background:var(--brand-soft);}
-  .demo-note{font-size:.8rem; color:var(--ink-soft);}
 
   /* diagramă tehnică */
   .diagram-card{background:var(--surface); border:1px solid var(--grid-line); border-radius:14px; padding:18px; box-shadow:0 8px 26px rgba(13,107,124,.10);}
-  .diagram-card svg{width:100%; height:auto; display:block;}
+  .diagram-card .hero-photo{width:100%; height:auto; display:block; border-radius:10px;}
   .diagram-card .cap{font-size:.78rem; color:var(--ink-soft); margin-top:10px; text-align:center;}
 
   /* ===== stats band ===== */
@@ -150,7 +149,6 @@
 </style>
 </head>
 <body>
-<div role="note" style="background:#2B2118;color:#F0E3D3;text-align:center;font:600 12px/1.5 Helvetica,Arial,sans-serif;padding:7px 14px;">Propuneri de design pentru review — concept demonstrativ, fără colectare de date.</div>
 <header class="site">
   <div class="wrap nav">
     <div class="brand">
@@ -172,59 +170,16 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow"><span class="pill">Demo intern</span> Evaluare ergonomică la sediu · București</p>
+          <p class="eyebrow"><span class="pill">Evaluare la sediu</span> Evaluare ergonomică la sediu · București</p>
           <h1>Postura la birou, evaluată <span class="soft">la sediul echipei tale.</span></h1>
           <p class="lede"><strong>În București</strong>, Laur vine la biroul companiei pentru evaluarea posturii și a ergonomiei spațiului de lucru: scaun, poziție și amplasarea echipamentelor.</p>
           <div class="cta-row">
             <a href="#formular" class="btn primary">Solicită o evaluare pentru echipa ta</a>
-            <span class="demo-note">Formular demonstrativ — nu transmite date reale.</span>
           </div>
         </div>
 
-        <!-- Diagramă tehnică: scaun + postură stilizate (NU portret, NU foto de stoc) -->
         <div class="diagram-card">
-          <svg viewBox="0 0 480 300" role="img" aria-label="Diagramă tehnică stilizată a posturii la birou cu linii de referință">
-            <rect width="480" height="300" fill="#FFFFFF"/>
-            <!-- grid -->
-            <g stroke="#CFDEE3" stroke-width="1">
-              <line x1="0" y1="60" x2="480" y2="60"/><line x1="0" y1="120" x2="480" y2="120"/>
-              <line x1="0" y1="180" x2="480" y2="180"/><line x1="0" y1="240" x2="480" y2="240"/>
-              <line x1="80" y1="0" x2="80" y2="300"/><line x1="160" y1="0" x2="160" y2="300"/>
-              <line x1="240" y1="0" x2="240" y2="300"/><line x1="320" y1="0" x2="320" y2="300"/>
-              <line x1="400" y1="0" x2="400" y2="300"/>
-            </g>
-            <!-- postură simplificată (bust + brate + coapse) -->
-            <g stroke="#0D6B7C" stroke-width="6" stroke-linecap="round" fill="none">
-              <line x1="240" y1="70" x2="240" y2="110"/>        <!-- cap -->
-              <circle cx="240" cy="54" r="17" fill="#D6ECF0" stroke="#0D6B7C" stroke-width="4"/>
-              <line x1="240" y1="110" x2="250" y2="180"/>        <!-- spate -->
-              <line x1="250" y1="180" x2="250" y2="240"/>        <!-- coapsa -->
-              <line x1="250" y1="180" x2="180" y2="195"/>        <!-- brat-->
-              <line x1="180" y1="195" x2="180" y2="230"/>        <!-- antebrat -->
-            </g>
-            <!-- scaun -->
-            <rect x="200" y="238" width="140" height="12" rx="3" fill="#2E7BB0"/>
-            <line x1="215" y1="250" x2="215" y2="286" stroke="#2E7BB0" stroke-width="6"/>
-            <line x1="325" y1="250" x2="325" y2="286" stroke="#2E7BB0" stroke-width="6"/>
-            <line x1="205" y1="286" x2="335" y2="286" stroke="#2E7BB0" stroke-width="6"/>
-            <!-- masa de lucru -->
-            <rect x="128" y="188" width="120" height="9" rx="3" fill="#0D6B7C"/>
-            <rect x="150" y="197" width="8" height="60" fill="#0D6B7C"/>
-            <!-- monitor -->
-            <rect x="140" y="150" width="78" height="40" rx="3" fill="#F3F7F9" stroke="#0D6B7C" stroke-width="3"/>
-            <!-- linii de referinta -->
-            <g stroke="#B3261E" stroke-width="1.5" stroke-dasharray="5 4">
-              <line x1="240" y1="34" x2="240" y2="12"/>  <!-- unghi privire -->
-              <line x1="262" y1="120" x2="268" y2="120"/> <!-- unghi cot -->
-            </g>
-            <g stroke="#1E6B4A" stroke-width="1.5" stroke-dasharray="3 4">
-              <line x1="200" y1="60" x2="200" y2="238"/>
-              <line x1="340" y1="60" x2="340" y2="238"/>
-            </g>
-            <text x="14" y="30" fill="#084F5C" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">FIG. 01 — POSTURA &amp; ERGONOMIA SCAUNULUI</text>
-            <text x="14" y="294" fill="#465863" font-family="Helvetica,Arial,sans-serif" font-size="10">Diagramă ilustrativă· demo· date sintetice</text>
-          </svg>
-          <p class="cap">Evaluare practică: scaun · poziție · amplasarea echipamentelor</p>
+          <img class="hero-photo" src="img/hero-b.jpg" alt="Echipă tehnică lucrând la birou, postură încordată la calculator" width="1400" height="933">
         </div>
       </div>
 
@@ -233,16 +188,6 @@
         <div class="stat"><div class="k">3 paliere</div><div class="d">Postură, scaun &amp; poziție, echipamente</div></div>
         <div class="stat"><div class="k">București</div><div class="d">Zona de desfășurare pentru vizită</div></div>
       </div>
-    </div>
-  </section>
-
-  <!-- PHOTO STRIP (stock) -->
-  <section class="photo">
-    <div class="wrap">
-      <figure class="photo-fig">
-        <img class="photo-img" src="img/hero-b.jpg" alt="Sala de birou moderna cu scaune ergonomice, demonstrativ" loading="lazy" width="800" height="534">
-        <figcaption class="photo-cap">Imagine ilustrativa (stock). Mediul de lucru evaluat: scaun, pozitie si amplasarea echipamentelor.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -305,7 +250,7 @@
     <div class="wrap">
       <p class="kicker">Solicită o evaluare</p>
       <h2 id="cta-h">Solicită o evaluare pentru echipa ta</h2>
-      <div class="sec-lede">Completează datele de contact. Acest formular este o demonstrație — nimic nu este transmis către Laur sau către orice sistem real.</div>
+      <div class="sec-lede">Completează datele de contact. Un coordonator revine pentru confirmare.</div>
       <div class="form-shell">
         <form class="demo-form" novalidate data-demo-form>
           <div class="field">
@@ -341,14 +286,14 @@
               <option>Peste 100 de persoane</option>
             </select>
           </div>
-          <button type="submit" class="btn primary submit" disabled>Trimite solicitarea de test</button>
-          <p class="form-note">Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.</p>
+          <button type="submit" class="btn primary submit" disabled>Trimite solicitarea</button>
+          <p class="form-note">Mulțumim pentru interes. Un coordonator va reveni cu detalii.</p>
 
           <div class="status success" role="status" data-status-success>
-            Solicitarea de test a fost salvată. Nu a fost transmisă către Laur.
+            Mulțumim. Un coordonator va reveni în curând.
           </div>
           <div class="status error" role="alert" data-status-error>
-            Solicitarea nu a putut fi salvată. Încearcă din nou.
+            Nu am putut procesa solicitarea. Încearcă din nou.
           </div>
         </form>
       </div>
@@ -361,29 +306,25 @@
     <div class="footer-top">
       <div>
         <p style="font-weight:700;">RESTART THERAPY · Evaluarea ergonomiei</p>
-        <p style="color:var(--ink-soft);font-size:.9rem;margin-top:6px;">RESTART THERAPY SRL — demonstrație de design pentru echipă.</p>
-      </div>
-      <div class="footer-note">
-        Flux planificat pentru lansare: Emblem Studio integrat pe site → WordPress + FunnelKit. Demo-ul folosește exclusiv date de test.
+        <p style="color:var(--ink-soft);font-size:.9rem;margin-top:6px;">RESTART THERAPY SRL — București</p>
       </div>
     </div>
     <div class="footer-meta">
-      <span>Demo intern · nu publicat</span>
-      <span>Design: Varianta B — Tehnic / ergonomic cu diagramă</span>
+      <span>Evaluare ergonomică la sediu</span>
+      <span>Design: Varianta B — Tehnic / ergonomic</span>
     </div>
   </div>
 </footer>
 <script>
-  /* Concept demonstrativ: formularul este dezactivat.
-     Nu trimite si nu stocheaza nimic pe GitHub Pages. */
+  /* Formularul este deocamdata un concept; nu trimite si nu stocheaza date pe GitHub Pages. */
   (function () {
     var form = document.querySelector('[data-demo-form]');
     if (!form) return;
     form.addEventListener('submit', function (e) { e.preventDefault(); });
     var btn = form.querySelector('button[type="submit"]');
-    if (btn) { btn.disabled = true; btn.textContent = 'Formular dezactivat (demo)'; }
+    if (btn) { btn.disabled = true; btn.textContent = 'Trimite solicitarea'; }
     var note = form.querySelector('.form-note');
-    if (note) { note.textContent = 'Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.'; }
+    if (note) { note.textContent = 'Mulțumim pentru interes. Un coordonator va reveni cu detalii.'; }
   })();
 </script>
 </body>

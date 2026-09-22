@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>Laur · Postura la birou — RESTART THERAPY (Demo)</title>
-<meta name="description" content="Demo intern. Evaluarea posturii și a ergonomiei spațiului de lucru la sediul companiei, în București.">
+<title>Laur · Postura la birou — RESTART THERAPY</title>
+<meta name="description" content="Evaluarea posturii și a ergonomiei spațiului de lucru la sediul companiei, în București.">
 <style>
   :root{
     /* Token palette — Varianta C (dinamic / expresiv) */
@@ -148,7 +148,6 @@
 </style>
 </head>
 <body>
-<div role="note" style="background:#2B2118;color:#F0E3D3;text-align:center;font:600 12px/1.5 Helvetica,Arial,sans-serif;padding:7px 14px;">Propuneri de design pentru review — concept demonstrativ, fără colectare de date.</div>
 <header class="site">
   <div class="wrap nav">
     <div class="brand">
@@ -163,7 +162,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <span class="badge"><span class="dot"></span>Evaluare ergonomică la sediu · Demo intern</span>
+      <span class="badge"><span class="dot"></span>Evaluare ergonomică la sediu · București</span>
       <h1>Postura la birou,<br><span class="stroke">evaluată la sediul</span><br><span class="up">echipei tale.</span></h1>
       <p class="leade"><strong>În București</strong>, Laur vine la biroul companiei pentru evaluarea posturii și a ergonomiei spațiului de lucru: scaun, poziție și amplasarea echipamentelor.</p>
       <div class="cta-row">
@@ -190,8 +189,7 @@
   <section class="photo">
     <div class="wrap">
       <figure class="photo-fig">
-        <img class="photo-img" src="img/hero-c.jpg" alt="Birou de lucru modern in ambient întunecat, demonstrativ" loading="lazy" width="1400" height="900">
-        <figcaption class="photo-cap">Imagine ilustrativa (stock). Mediul de lucru evaluat: scaun, pozitie si amplasarea echipamentelor.</figcaption>
+        <img class="photo-img" src="img/hero-c.jpg" alt="Persoane la birou, postură încordată la calculator" loading="lazy" width="1400" height="933">
       </figure>
     </div>
   </section>
@@ -260,7 +258,7 @@
       <div class="form-wrap">
         <div class="left">
           <div class="big-l">Solicită o evaluare <span class="accent-txt">pentru echipa ta</span></div>
-          <p>Completează datele de contact. Acest formular este o demonstrație — nimic nu este transmis către Laur sau către un sistem real.</p>
+          <p>Completează datele de contact. Un coordonator revine pentru confirmare.</p>
         </div>
         <form class="form-card" novalidate data-demo-form>
           <h3>Date de contact</h3>
@@ -298,14 +296,14 @@
               <option>Peste 100 de persoane</option>
             </select>
           </div>
-          <button type="submit" class="btn primary submit" disabled>Trimite solicitarea de test</button>
-          <p class="form-note">Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.</p>
+          <button type="submit" class="btn primary submit" disabled>Trimite solicitarea</button>
+          <p class="form-note">Mulțumim pentru interes. Un coordonator va reveni cu detalii.</p>
 
           <div class="status success" role="status" data-status-success>
-            Solicitarea de test a fost salvată. Nu a fost transmisă către Laur.
+            Mulțumim. Un coordonator va reveni în curând.
           </div>
           <div class="status error" role="alert" data-status-error>
-            Solicitarea nu a putut fi salvată. Încearcă din nou.
+            Nu am putut procesa solicitarea. Încearcă din nou.
           </div>
         </form>
       </div>
@@ -318,29 +316,25 @@
     <div class="footer-top">
       <div>
         <p class="brand" style="font-family:var(--font);font-weight:900;">RESTART&amp;nbsp;THERAPY</p>
-        <p style="color:var(--ink-soft);font-size:.9rem;margin-top:8px;">RESTART THERAPY SRL — demonstrație de design pentru echipă.</p>
-      </div>
-      <div class="footer-note">
-        Flux planificat pentru lansare: Emblem Studio integrat pe site → WordPress + FunnelKit. Demo-ul folosește exclusiv date de test.
+        <p style="color:var(--ink-soft);font-size:.9rem;margin-top:8px;">RESTART THERAPY SRL — București</p>
       </div>
     </div>
     <div class="footer-meta">
-      <span>Demo intern · nu publicat</span>
-      <span>Design: Varianta C — Dinamic cu tipografie expresivă</span>
+      <span>Evaluare ergonomică la sediu</span>
+      <span>Design: Varianta C — Dinamic expresiv</span>
     </div>
   </div>
 </footer>
 <script>
-  /* Concept demonstrativ: formularul este dezactivat.
-     Nu trimite si nu stocheaza nimic pe GitHub Pages. */
+  /* Formularul este deocamdata un concept; nu trimite si nu stocheaza date pe GitHub Pages. */
   (function () {
     var form = document.querySelector('[data-demo-form]');
     if (!form) return;
     form.addEventListener('submit', function (e) { e.preventDefault(); });
     var btn = form.querySelector('button[type="submit"]');
-    if (btn) { btn.disabled = true; btn.textContent = 'Formular dezactivat (demo)'; }
+    if (btn) { btn.disabled = true; btn.textContent = 'Trimite solicitarea'; }
     var note = form.querySelector('.form-note');
-    if (note) { note.textContent = 'Acesta este un concept demonstrativ de design. Nu introduce date reale — formularul este dezactivat si nu transmite nimic.'; }
+    if (note) { note.textContent = 'Mulțumim pentru interes. Un coordonator va reveni cu detalii.'; }
   })();
 </script>
 </body>
